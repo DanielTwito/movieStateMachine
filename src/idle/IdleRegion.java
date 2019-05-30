@@ -2,7 +2,7 @@ package idle;
 
 public class IdleRegion implements idleState {
 
-    public  idleState idle;
+    private idleState idle;
 
     public IdleRegion()
     {

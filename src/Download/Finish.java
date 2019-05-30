@@ -2,11 +2,14 @@ package Download;
 
 public class Finish implements DownloadIState {
 
+    DownloadRegion downloadRegion;
+
     public Finish(DownloadRegion downloadRegion) {
+        this.downloadRegion = downloadRegion;
     }
 
     @Override
-    public void finish() {
+    public void downloadFinish() {
 
     }
 

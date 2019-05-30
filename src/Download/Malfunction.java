@@ -1,11 +1,15 @@
 package Download;
 
 public class Malfunction implements DownloadIState {
+
+    private DownloadRegion downloadRegion;
+
     public Malfunction(DownloadRegion downloadRegion) {
+        this.downloadRegion = downloadRegion;
     }
 
     @Override
-    public void finish() {
+    public void downloadFinish() {
 
     }
 

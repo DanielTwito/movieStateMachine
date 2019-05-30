@@ -1,12 +1,18 @@
 package Download;
 
 public class WaitingForInternet implements DownloadIState {
-    @Override
-    public void finish() {
 
-    }
+    private DownloadRegion downloadRegion;
 
     public WaitingForInternet(DownloadRegion downloadRegion) {
+        this.downloadRegion = downloadRegion;
+    }
+
+    @Override
+    public void downloadFinish() {
+    }
+
+    public WaitingForInternet() {
     }
 
     @Override

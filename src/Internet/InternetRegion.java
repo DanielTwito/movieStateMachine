@@ -1,16 +1,16 @@
 package Internet;
 
 public class InternetRegion implements InternetStatusState{
-    public InternetStatusState connectInternet;
-    public InternetStatusState internetOff;
 
-    public InternetStatusState internetStatusStateCurrent;
+    private InternetStatusState connectInternet;
+    private InternetStatusState internetOff;
+    private InternetStatusState internetStatusCurrentState;
 
     public InternetRegion() {
         connectInternet = new ConnectInternet(this);
         internetOff = new InternetOff(this);
 
-        internetStatusStateCurrent = connectInternet;
+        internetStatusCurrentState = connectInternet;
     }
 
 

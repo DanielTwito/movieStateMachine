@@ -1,7 +1,12 @@
 package Internet;
 
 public class ConnectInternet implements InternetStatusState {
+
+    private InternetRegion internetRegion;
+
     public ConnectInternet(InternetRegion internetRegion) {
+
+        this.internetRegion = internetRegion;
     }
 
     @Override

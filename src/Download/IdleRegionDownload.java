@@ -2,12 +2,14 @@ package Download;
 
 public class IdleRegionDownload implements DownloadIState{
 
-    public IdleRegionDownload(DownloadRegion downloadRegion) {
+    private DownloadRegion downloadRegion;
 
+    public IdleRegionDownload(DownloadRegion downloadRegion) {
+        this.downloadRegion = downloadRegion;
     }
 
     @Override
-    public void finish() {
+    public void downloadFinish() {
 
     }
 

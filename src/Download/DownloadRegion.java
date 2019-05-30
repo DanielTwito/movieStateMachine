@@ -6,13 +6,14 @@ package Download;
 
 
 public class DownloadRegion implements DownloadIState {
-    public DownloadIState idleRegionDownload;
-    public DownloadIState download;
-    public DownloadIState finish;
-    public DownloadIState waitingForInternet;
-    public DownloadIState malfunction;
 
-    public DownloadIState downloadStateCurrent;
+    private DownloadIState idleRegionDownload;
+    private DownloadIState download;
+    private DownloadIState finish;
+    private DownloadIState waitingForInternet;
+    private DownloadIState malfunction;
+    private DownloadIState downloadCurrentState;
+
 
     public DownloadRegion() {
         idleRegionDownload = new IdleRegionDownload(this);
@@ -21,12 +22,12 @@ public class DownloadRegion implements DownloadIState {
         waitingForInternet = new WaitingForInternet(this);
         malfunction = new Malfunction(this);
 
-        downloadStateCurrent = idleRegionDownload;
+        downloadCurrentState = idleRegionDownload;
     }
 
 
     @Override
-    public void finish() {
+    public void downloadFinish() {
 
     }
 
@@ -64,4 +65,33 @@ public class DownloadRegion implements DownloadIState {
     public void whenQueueGreaterThenZero() {
 
     }
+
+
+    public DownloadIState getIdleRegionDownload() {
+        return idleRegionDownload;
+    }
+
+    public DownloadIState getDownload() {
+        return download;
+    }
+
+    public DownloadIState getFinish() {
+        return finish;
+    }
+
+    public DownloadIState getWaitingForInternet() {
+        return waitingForInternet;
+    }
+
+    public DownloadIState getMalfunction() {
+        return malfunction;
+    }
+
+    public void setDownloadCurrentState(DownloadIState newCurrentState) {
+        downloadCurrentState = newCurrentState;
+    }
+
+
+
+
 }

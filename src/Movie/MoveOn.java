@@ -3,6 +3,7 @@ package Movie;
 public class MoveOn implements MovieState {
     private MovieRegion myMovieRegion;
 
+
     public MoveOn(MovieRegion movieRegion) {
         this.myMovieRegion=movieRegion;
     }
