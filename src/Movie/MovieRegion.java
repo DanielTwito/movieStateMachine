@@ -2,11 +2,11 @@ package Movie;
 
 public class MovieRegion implements MovieState {
 
-    public MovieState idleRegionMovie;
-    public MovieState moveOn;
-    public MovieState puseMove;
+    private MovieState idleRegionMovie;
+    private MovieState moveOn;
+    private MovieState puseMove;
 
-    public MovieState movieStateCurrent;
+    private MovieState movieCurrentState;
 
     public MovieRegion(){
         idleRegionMovie = new IdleRegionMovie(this);
@@ -14,10 +14,14 @@ public class MovieRegion implements MovieState {
         puseMove = new PuseMove(this);
 
         //initial state in movie regine
-        movieStateCurrent = idleRegionMovie;
+        movieCurrentState = idleRegionMovie;
     }
 
+    public void setMovieCurrentState(MovieState movieCurrentState) {this.movieCurrentState = movieCurrentState;}
 
+    public MovieState getIdleRegionMovie() {return idleRegionMovie;}
+    public MovieState getMoveOn() {return moveOn;}
+    public MovieState getPuseMove() {return puseMove;}
 
     @Override
     public void movieOn() {

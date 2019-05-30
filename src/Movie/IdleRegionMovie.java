@@ -1,10 +1,12 @@
 package Movie;
 
 public class IdleRegionMovie implements MovieState{
+
+    private MovieRegion myMovieRegion;
+
     public IdleRegionMovie(MovieRegion movieRegion) {
+    this.myMovieRegion=movieRegion;
     }
-
-
 
 
 

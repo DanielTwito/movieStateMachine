@@ -2,7 +2,11 @@ package Requests;
 
 public class IdleRegionRequest implements RequestState{
 
+    private RequestRegion myRequestRegion;
+
     public IdleRegionRequest(RequestRegion requestRegion) {
+
+        this.myRequestRegion=requestRegion;
     }
 
     @Override

@@ -1,7 +1,11 @@
 package Movie;
 
 public class PuseMove implements MovieState {
+
+    private MovieRegion myMovieRegion;
+
     public PuseMove(MovieRegion movieRegion) {
+    this.myMovieRegion=movieRegion;
     }
 
     @Override

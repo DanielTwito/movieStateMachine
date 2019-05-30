@@ -2,11 +2,11 @@ package UserStatus;
 
 
 public class UserStatusRegion implements UserStatusState {
-    public UserStatusState statusBeginner;
-    public UserStatusState statusAdvanced;
-    public UserStatusState statusProfessional;
+    private UserStatusState statusBeginner;
+    private UserStatusState statusAdvanced;
+    private UserStatusState statusProfessional;
 
-    public UserStatusState userStatusStateCurrent;
+    private UserStatusState userStatusStateCurrent;
 
     public UserStatusRegion(){
         statusBeginner = new StatusBeginner(this);
@@ -16,6 +16,12 @@ public class UserStatusRegion implements UserStatusState {
         //initial state begiiner
         userStatusStateCurrent = statusBeginner;
     }
+
+    public void setUserStatusStateCurrent(UserStatusState userStatusStateCurrent) {this.userStatusStateCurrent = userStatusStateCurrent;}
+
+    public UserStatusState getStatusBeginner() {return statusBeginner;}
+    public UserStatusState getStatusAdvanced() {return statusAdvanced;}
+    public UserStatusState getStatusProfessional() {return statusProfessional;}
 
     @Override
     public void whenPointsLessthenFour() {

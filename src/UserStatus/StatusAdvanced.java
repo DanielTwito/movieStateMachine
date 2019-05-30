@@ -1,7 +1,11 @@
 package UserStatus;
 
 public class StatusAdvanced implements UserStatusState {
+
+    private UserStatusRegion myUserStatusRegion;
+
     public StatusAdvanced(UserStatusRegion userStatusRegion) {
+        this.myUserStatusRegion = userStatusRegion;
     }
 
     @Override

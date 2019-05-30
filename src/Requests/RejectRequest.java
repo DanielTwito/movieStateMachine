@@ -2,7 +2,10 @@ package Requests;
 
 public class RejectRequest implements RequestState {
 
+    private RequestRegion myRequestRegion;
+
     public RejectRequest(RequestRegion requestRegion) {
+        this.myRequestRegion = requestRegion;
     }
 
     @Override

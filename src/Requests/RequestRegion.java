@@ -1,19 +1,25 @@
 package Requests;
 
 public class RequestRegion implements RequestState {
-    public RequestState idleRegionRequest;
-    public RequestState rejectRequest;
-    public RequestState requestApproval;
+    private RequestState idleRegionRequest;
+    private RequestState rejectRequest;
+    private RequestState requestApproval;
 
-    public RequestState requestStateCurrent;
+    private RequestState requestCurrentState;
 
     public RequestRegion() {
         idleRegionRequest = new IdleRegionRequest(this);
         rejectRequest = new RejectRequest(this);
         requestApproval = new RequestApproval(this);
 
-        requestStateCurrent = idleRegionRequest;
+        requestCurrentState = idleRegionRequest;
     }
+
+    public void setRequestCurrentState(RequestState requestCurrentState) {this.requestCurrentState = requestCurrentState;}
+
+    public RequestState getIdleRegionRequest() {return idleRegionRequest;}
+    public RequestState getRejectRequest() {return rejectRequest;}
+    public RequestState getRequestApproval() {return requestApproval;}
 
     @Override
     public void fileRequest(int fileSize) {
