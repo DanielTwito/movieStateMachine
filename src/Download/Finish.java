@@ -9,7 +9,7 @@ public class Finish implements DownloadIState {
     }
 
     @Override
-    public void downloadFinish() {
+    public void finishDownload() {
 
     }
 
