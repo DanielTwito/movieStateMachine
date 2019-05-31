@@ -27,6 +27,8 @@ public class RegionManager implements SystemState{
     private static int diskSize;
     private static Queue<File> requestsQueue;
 
+    private static int point;
+
 
     public RegionManager(int diskSize){
 
@@ -36,9 +38,9 @@ public class RegionManager implements SystemState{
         movieRegion = new MovieRegion();
         requestRegion = new RequestRegion();
         userStatusRegion = new UserStatusRegion();
-
         requestsQueue = new LinkedList<>();
         setDiskSize(diskSize);
+        point=0;
     }
 
     public static DownloadRegion getDownloadRegion() {
@@ -73,9 +75,43 @@ public class RegionManager implements SystemState{
         return requestsQueue;
     }
 
+    public static int getPoint() {
+        return point;
+    }
+
     public static void setDiskSize(int diskSize) {
         if(diskSize>=0)
             RegionManager.diskSize = diskSize;
+    }
+
+
+
+    public static void setPoint(int pointNew) {
+        int currPoint=point;
+        RegionManager.point = pointNew;
+        if(currPoint==3&&point==4){
+            userStatusRegion.whenPointsGreaterOrEqualFour();
+            System.out.println("Event when(point>=4) was fired");
+        }
+        else if(currPoint==4&&point==5){
+            userStatusRegion.whenPointsLessthenFour();
+            System.out.println("Event when(point<4) was fired");
+
+        }
+        else if(currPoint==6&&point==7){
+            userStatusRegion.whenPointsGreaterOrEqualSeven();
+            System.out.println("Event when(point>=7) was fired");
+
+        }
+        else if(currPoint==7&&point==8){
+            userStatusRegion.whenPointsLessthenSeven();
+            System.out.println("Event when(point<7) was fired");
+
+        }
+    }
+
+    public static void inDownload(){
+        movieRegion.whenInDownload();
     }
 
     public void downloadFinish() {

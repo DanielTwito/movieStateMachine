@@ -15,11 +15,13 @@ public class PuseMove implements MovieState {
 
     @Override
     public void downloadAborted() {
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getIdleRegionMovie());
 
     }
 
     @Override
     public void finishDownload() {
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getIdleRegionMovie());
 
     }
 
@@ -45,11 +47,21 @@ public class PuseMove implements MovieState {
 
     @Override
     public void resume() {
+        myMovieRegion.hold=false;
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getMoveOn());
 
     }
 
     @Override
     public void whenInDownload() {
+        if(!myMovieRegion.hold){
+            myMovieRegion.setMovieCurrentState(myMovieRegion.getMoveOn());
 
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Pause Movie";
     }
 }

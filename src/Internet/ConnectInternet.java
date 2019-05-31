@@ -16,6 +16,12 @@ public class ConnectInternet implements InternetStatusState {
 
     @Override
     public void internetOff() {
+        internetRegion.setInternetStatusCurrentState(internetRegion.getInternetOff());
 
+    }
+
+    @Override
+    public String toString() {
+        return "Connect Internet";
     }
 }

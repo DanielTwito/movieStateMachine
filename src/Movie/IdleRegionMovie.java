@@ -1,17 +1,29 @@
 package Movie;
 
+import Internet.ConnectInternet;
+import Manger.RegionManager;
+
 public class IdleRegionMovie implements MovieState{
 
     private MovieRegion myMovieRegion;
 
+
+
+
     public IdleRegionMovie(MovieRegion movieRegion) {
     this.myMovieRegion=movieRegion;
+    myMovieRegion.currentTime=0;
     }
 
 
 
     @Override
     public void movieOn() {
+        if(RegionManager.getInternetRegion().getInternetStatusCurrentState() instanceof ConnectInternet){
+            //and if presence of download >20%
+            myMovieRegion.currentTime=0;
+            myMovieRegion.setMovieCurrentState(myMovieRegion.getMoveOn());
+        }
 
     }
 
@@ -53,5 +65,10 @@ public class IdleRegionMovie implements MovieState{
     @Override
     public void whenInDownload() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Idle";
     }
 }

@@ -13,6 +13,7 @@ public interface MovieState {
     //not sure about this function
     //this is the transition between puse_movie to move_on in the state machine
     void whenInDownload();
+    String toString();
 
 
 

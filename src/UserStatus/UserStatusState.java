@@ -10,4 +10,6 @@ public interface UserStatusState {
     void whenPointsLessthenSeven();
     //for the event when(point>=7)
     void whenPointsGreaterOrEqualSeven();
+    //string to print the name of the state
+    String toString();
 }

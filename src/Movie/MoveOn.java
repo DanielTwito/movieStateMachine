@@ -6,7 +6,6 @@ public class MoveOn implements MovieState {
 
     public MoveOn(MovieRegion movieRegion) {
 
-
         this.myMovieRegion=movieRegion;
     }
 
@@ -17,31 +16,37 @@ public class MoveOn implements MovieState {
 
     @Override
     public void downloadAborted() {
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getIdleRegionMovie());
 
     }
 
     @Override
     public void finishDownload() {
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getIdleRegionMovie());
 
     }
 
     @Override
     public void restartMovie() {
+        myMovieRegion.currentTime=0;
 
     }
 
     @Override
     public void holdMovie() {
+        myMovieRegion.hold=true;
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getPuseMove());
 
     }
 
     @Override
     public void downloadError() {
-
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getPuseMove());
     }
 
     @Override
     public void internetOff() {
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getPuseMove());
 
     }
 
@@ -53,5 +58,10 @@ public class MoveOn implements MovieState {
     @Override
     public void whenInDownload() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Movie On";
     }
 }

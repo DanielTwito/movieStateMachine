@@ -17,7 +17,11 @@ public class UserStatusRegion {
         userStatusStateCurrent = statusBeginner;
     }
 
-    public void setUserStatusStateCurrent(UserStatusState userStatusStateCurrent) {this.userStatusStateCurrent = userStatusStateCurrent;}
+    public void setUserStatusStateCurrent(UserStatusState userStatusStateCurrent){
+        System.out.println("Exit "+ this.userStatusStateCurrent.toString());
+        this.userStatusStateCurrent = userStatusStateCurrent;
+        System.out.println("Enter "+ this.userStatusStateCurrent.toString());
+    }
 
 
     public UserStatusState getUserStatusStateCurrent() {return userStatusStateCurrent;}
@@ -27,21 +31,22 @@ public class UserStatusRegion {
 
 
     public void whenPointsLessthenFour() {
-
+        userStatusStateCurrent.whenPointsLessthenFour();
     }
 
 
     public void whenPointsGreaterOrEqualFour() {
-
+        userStatusStateCurrent.whenPointsGreaterOrEqualFour();
     }
 
 
     public void whenPointsLessthenSeven() {
-
+        userStatusStateCurrent.whenPointsLessthenSeven();
     }
 
 
     public void whenPointsGreaterOrEqualSeven() {
-
+        userStatusStateCurrent.whenPointsGreaterOrEqualSeven();
     }
+
 }

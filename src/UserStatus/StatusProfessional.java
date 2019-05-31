@@ -20,11 +20,17 @@ public class StatusProfessional implements UserStatusState {
 
     @Override
     public void whenPointsLessthenSeven() {
+        myUserStatusRegion.setUserStatusStateCurrent(myUserStatusRegion.getStatusAdvanced());
 
     }
 
     @Override
     public void whenPointsGreaterOrEqualSeven() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Professional Status";
     }
 }

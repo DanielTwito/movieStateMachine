@@ -10,7 +10,7 @@ public class IdleRegion{
     }
 
     public void downloadAborted() {
-
+        idle.downloadAborted();
         //neec to do fileInQueue and remove
 
     }

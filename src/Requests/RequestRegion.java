@@ -8,14 +8,12 @@ public class RequestRegion {
     private RequestState idleRegionRequest;
     private RequestState rejectRequest;
     private RequestState requestApproval;
-
     private RequestState requestCurrentState;
 
     public RequestRegion() {
         idleRegionRequest = new IdleRegionRequest(this);
         rejectRequest = new RejectRequest(this);
         requestApproval = new RequestApproval(this);
-
         requestCurrentState = idleRegionRequest;
     }
 

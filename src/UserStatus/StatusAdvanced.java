@@ -10,7 +10,7 @@ public class StatusAdvanced implements UserStatusState {
 
     @Override
     public void whenPointsLessthenFour() {
-
+        myUserStatusRegion.setUserStatusStateCurrent(myUserStatusRegion.getStatusBeginner());
     }
 
     @Override
@@ -25,6 +25,13 @@ public class StatusAdvanced implements UserStatusState {
 
     @Override
     public void whenPointsGreaterOrEqualSeven() {
+        myUserStatusRegion.setUserStatusStateCurrent(myUserStatusRegion.getStatusProfessional());
 
+    }
+
+
+    @Override
+    public String toString() {
+        return "Advance Status";
     }
 }

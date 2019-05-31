@@ -15,7 +15,8 @@ public class StatusBeginner implements UserStatusState {
 
     @Override
     public void whenPointsGreaterOrEqualFour() {
-
+        //System.out.println("exit beginner");
+        myUserStatusRegion.setUserStatusStateCurrent(myUserStatusRegion.getStatusAdvanced());
     }
 
     @Override
@@ -26,5 +27,10 @@ public class StatusBeginner implements UserStatusState {
     @Override
     public void whenPointsGreaterOrEqualSeven() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Beginner Status";
     }
 }
