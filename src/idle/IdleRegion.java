@@ -1,8 +1,8 @@
 package idle;
 
-public class IdleRegion implements idleState {
+public class IdleRegion implements IdleState {
 
-    private idleState idle;
+    private IdleState idle;
 
     public IdleRegion()
     {
