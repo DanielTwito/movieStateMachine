@@ -34,8 +34,8 @@ public class RegionManager implements DownloadIState, InternetStatusState, Movie
         this.requestRegion = requestRegion;
         this.userStatusRegion = userStatusRegion;
 
-        this.requestsQueue = new LinkedList<>();
-        this.diskSize = 100;
+        requestsQueue = new LinkedList<>();
+        diskSize = 100;
     }
 
     public DownloadRegion getDownloadRegion() {

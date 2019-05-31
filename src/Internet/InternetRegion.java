@@ -13,7 +13,17 @@ public class InternetRegion implements InternetStatusState{
         internetStatusCurrentState = connectInternet;
     }
 
+    public InternetStatusState getInternetStatusCurrentState() {
+        return internetStatusCurrentState;
+    }
 
+    public InternetStatusState getConnectInternet() {
+        return connectInternet;
+    }
+
+    public InternetStatusState getInternetOff() {
+        return internetOff;
+    }
 
     @Override
     public void internetOn() {

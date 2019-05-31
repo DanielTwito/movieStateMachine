@@ -13,10 +13,6 @@ public class DownloadRegion implements DownloadIState {
     private DownloadIState waitingForInternet;
     private DownloadIState malfunction;
 
-    public DownloadIState getDownloadCurrentState() {
-        return downloadCurrentState;
-    }
-
     private DownloadIState downloadCurrentState;
 
 
@@ -28,6 +24,10 @@ public class DownloadRegion implements DownloadIState {
         malfunction = new Malfunction(this);
 
         downloadCurrentState = idleRegionDownload;
+    }
+
+    public DownloadIState getDownloadCurrentState() {
+        return downloadCurrentState;
     }
 
 

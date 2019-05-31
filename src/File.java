@@ -1,4 +1,5 @@
 public class File {
+
     private String fileName;
     private int fileSize;
 
