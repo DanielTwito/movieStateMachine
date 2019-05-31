@@ -29,11 +29,13 @@ public class RequestRegion {
 
     public void fileRequest(File file) {
 
+        requestCurrentState.fileRequest(file);
 
     }
 
 
     public void timeEventAfterFourSecond(File file) {
+        requestCurrentState.timeEventAfterFourSecond(file);
 
     }
 }
