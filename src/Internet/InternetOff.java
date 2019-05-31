@@ -1,5 +1,6 @@
 package Internet;
 
+
 public class InternetOff implements InternetStatusState {
 
     private InternetRegion internetRegion;
@@ -10,6 +11,7 @@ public class InternetOff implements InternetStatusState {
 
     @Override
     public void internetOn() {
+//        RegionManager.getDiskSize();
 
     }
 

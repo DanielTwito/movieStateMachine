@@ -15,14 +15,14 @@ import idle.IdleRegion;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class RegionManager implements DownloadIState, InternetStatusState, MovieState, RequestState, UserStatusState {
+public class RegionManager{
 
-    private DownloadRegion downloadRegion;
-    private IdleRegion idleRegion;
-    private InternetRegion internetRegion;
-    private MovieRegion movieRegion;
-    private RequestRegion requestRegion;
-    private UserStatusRegion userStatusRegion;
+    private static DownloadRegion downloadRegion;
+    private static IdleRegion idleRegion;
+    private static InternetRegion internetRegion;
+    private static MovieRegion movieRegion;
+    private static RequestRegion requestRegion;
+    private static UserStatusRegion userStatusRegion;
 
     private static int diskSize;
     private static Queue<File> requestsQueue;
@@ -40,23 +40,23 @@ public class RegionManager implements DownloadIState, InternetStatusState, Movie
         diskSize = 100;
     }
 
-    public DownloadRegion getDownloadRegion() {
+    public static DownloadRegion getDownloadRegion() {
         return downloadRegion;
     }
 
-    public IdleRegion getIdleRegion() {
+    public static IdleRegion getIdleRegion() {
         return idleRegion;
     }
 
-    public InternetRegion getInternetRegion() {
+    public static InternetRegion getInternetRegion() {
         return internetRegion;
     }
 
-    public MovieRegion getMovieRegion() {
+    public static MovieRegion getMovieRegion() {
         return movieRegion;
     }
 
-    public RequestRegion getRequestRegion() {
+    public static RequestRegion getRequestRegion() {
         return requestRegion;
     }
 
@@ -77,103 +77,84 @@ public class RegionManager implements DownloadIState, InternetStatusState, Movie
             RegionManager.diskSize = diskSize;
     }
 
-    @Override
     public void downloadFinish() {
 
     }
 
-    @Override
     public void downloadError() {
 
     }
 
-    @Override
     public void internetOff() {
 
     }
 
-    @Override
     public void resume() {
 
     }
 
-    @Override
     public void whenInDownload() {
 
     }
 
-    @Override
     public void internetOn() {
 
     }
 
-    @Override
     public void errorFixed() {
 
     }
 
-    @Override
     public void timeEventAfterThreeSecond() {
 
     }
 
-    @Override
     public void movieOn() {
 
     }
 
-    @Override
     public void downloadAborted() {
 
     }
 
-    @Override
     public void finishDownload() {
 
     }
 
-    @Override
     public void restartMovie() {
 
     }
 
-    @Override
     public void holdMovie() {
 
     }
 
-    @Override
     public void whenQueueGreaterThenZero() {
 
     }
 
-    @Override
     public void fileRequest(File file) {
 
     }
 
-    @Override
     public void timeEventAfterFourSecond(File file) {
 
     }
 
-    @Override
     public void whenPointsLessthenFour() {
 
     }
 
-    @Override
     public void whenPointsGreaterOrEqualFour() {
 
     }
 
-    @Override
     public void whenPointsLessthenSeven() {
 
     }
 
-    @Override
     public void whenPointsGreaterOrEqualSeven() {
 
     }
+
 }

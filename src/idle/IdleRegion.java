@@ -1,6 +1,6 @@
 package idle;
 
-public class IdleRegion implements IdleState {
+public class IdleRegion{
 
     private IdleState idle;
 
@@ -9,7 +9,6 @@ public class IdleRegion implements IdleState {
         idle = new Idle(this);
     }
 
-    @Override
     public void downloadAborted() {
 
         //neec to do fileInQueue and remove
