@@ -31,7 +31,7 @@ public class DownloadRegion{
     }
 
 
-    public void downloadFinish() {
+    public void finishDownload() {
 
     }
 

@@ -2,7 +2,7 @@ package Download;
 
 public interface DownloadIState {
 
-    void downloadFinish();
+    void finishDownload();
     void downloadError();
     void internetOff();
     void internetOn();

@@ -9,7 +9,7 @@ public class WaitingForInternet implements DownloadIState {
     }
 
     @Override
-    public void downloadFinish() {
+    public void finishDownload() {
     }
 
     public WaitingForInternet() {

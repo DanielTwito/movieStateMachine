@@ -28,13 +28,14 @@ public class RegionManager{
     private static Queue<File> requestsQueue;
 
 
-    public RegionManager(DownloadRegion downloadRegion, IdleRegion idleRegion, InternetRegion internetRegion, MovieRegion movieRegion, RequestRegion requestRegion, UserStatusRegion userStatusRegion) {
-        this.downloadRegion = downloadRegion;
-        this.idleRegion = idleRegion;
-        this.internetRegion = internetRegion;
-        this.movieRegion = movieRegion;
-        this.requestRegion = requestRegion;
-        this.userStatusRegion = userStatusRegion;
+    public RegionManager(){
+
+        downloadRegion = new DownloadRegion();
+        idleRegion = new IdleRegion();
+        internetRegion = new InternetRegion();
+        movieRegion = new MovieRegion();
+        requestRegion = new RequestRegion();
+        userStatusRegion = new UserStatusRegion();
 
         requestsQueue = new LinkedList<>();
         diskSize = 100;
@@ -60,7 +61,7 @@ public class RegionManager{
         return requestRegion;
     }
 
-    public UserStatusRegion getUserStatusRegion() {
+    public static UserStatusRegion getUserStatusRegion() {
         return userStatusRegion;
     }
 
@@ -86,11 +87,13 @@ public class RegionManager{
     }
 
     public void internetOff() {
-
+        internetRegion.internetOff();
+        downloadRegion.internetOff();
+        movieRegion.internetOff();
     }
 
     public void resume() {
-
+        movieRegion.resume();
     }
 
     public void whenInDownload() {
@@ -98,10 +101,13 @@ public class RegionManager{
     }
 
     public void internetOn() {
-
+        internetRegion.internetOn();
+        downloadRegion.internetOn();
+//        movieRegion.internetOn();
     }
 
     public void errorFixed() {
+        downloadRegion.errorFixed();
 
     }
 
@@ -110,23 +116,24 @@ public class RegionManager{
     }
 
     public void movieOn() {
-
+        movieRegion.movieOn();
     }
 
     public void downloadAborted() {
-
+        idleRegion.downloadAborted();
     }
 
     public void finishDownload() {
-
+        downloadRegion.finishDownload();
+        movieRegion.finishDownload();
     }
 
     public void restartMovie() {
-
+        movieRegion.restartMovie();
     }
 
     public void holdMovie() {
-
+        movieRegion.holdMovie();
     }
 
     public void whenQueueGreaterThenZero() {
@@ -134,27 +141,27 @@ public class RegionManager{
     }
 
     public void fileRequest(File file) {
-
+        requestRegion.fileRequest(file);
     }
 
     public void timeEventAfterFourSecond(File file) {
-
+        requestRegion.timeEventAfterFourSecond(file);
     }
 
     public void whenPointsLessthenFour() {
-
+        userStatusRegion.whenPointsLessthenFour();
     }
 
     public void whenPointsGreaterOrEqualFour() {
-
+        userStatusRegion.whenPointsGreaterOrEqualFour();
     }
 
     public void whenPointsLessthenSeven() {
-
+        userStatusRegion.whenPointsLessthenSeven();
     }
 
     public void whenPointsGreaterOrEqualSeven() {
-
+        userStatusRegion.whenPointsGreaterOrEqualSeven();
     }
 
 }

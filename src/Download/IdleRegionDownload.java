@@ -9,7 +9,7 @@ public class IdleRegionDownload implements DownloadIState{
     }
 
     @Override
-    public void downloadFinish() {
+    public void finishDownload() {
 
     }
 
