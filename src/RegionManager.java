@@ -23,7 +23,7 @@ public class RegionManager implements DownloadIState, InternetStatusState, Movie
     private UserStatusRegion userStatusRegion;
 
     private static int diskSize;
-    private static Queue<Object> requestsQueue;
+    private static Queue<File> requestsQueue;
 
 
     public RegionManager(DownloadRegion downloadRegion, IdleRegion idleRegion, InternetRegion internetRegion, MovieRegion movieRegion, RequestRegion requestRegion, UserStatusRegion userStatusRegion) {
@@ -66,7 +66,7 @@ public class RegionManager implements DownloadIState, InternetStatusState, Movie
         return diskSize;
     }
 
-    public static Queue<Object> getRequestsQueue() {
+    public static Queue<File> getRequestsQueue() {
         return requestsQueue;
     }
 
