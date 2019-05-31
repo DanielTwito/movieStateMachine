@@ -19,7 +19,13 @@ public class RequestRegion {
         requestCurrentState = idleRegionRequest;
     }
 
-    public void setRequestCurrentState(RequestState requestCurrentState) {this.requestCurrentState = requestCurrentState;}
+    public void setRequestCurrentState(RequestState requestCurrentState) {
+
+        System.out.println("exiting "+ this.requestCurrentState.getName());
+        this.requestCurrentState = requestCurrentState;
+        System.out.println("entering "+this.requestCurrentState.getName());
+
+    }
 
     public RequestState getRequestCurrentState() {return requestCurrentState;}
     public RequestState getIdleRegionRequest() {return idleRegionRequest;}

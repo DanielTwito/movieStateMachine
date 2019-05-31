@@ -6,7 +6,7 @@ import Manger.RegionManager;
 public class RejectRequest implements RequestState {
 
     private RequestRegion myRequestRegion;
-
+    public String name = "RejectRequest";
     public RejectRequest(RequestRegion requestRegion) {
         this.myRequestRegion = requestRegion;
     }
@@ -30,5 +30,10 @@ public class RejectRequest implements RequestState {
             myRequestRegion.setRequestCurrentState(myRequestRegion.getIdleRegionRequest());
         }
 
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }

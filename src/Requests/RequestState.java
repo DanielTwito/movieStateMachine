@@ -12,4 +12,6 @@ public interface RequestState {
     //gor the event time(4)[disk > or < file.size]
     void timeEventAfterFourSecond(File file);
 
+    String getName();
+
 }

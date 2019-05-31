@@ -6,6 +6,7 @@ import Manger.RegionManager;
 public class IdleRegionRequest implements RequestState{
 
     private RequestRegion myRequestRegion;
+    public String name = "IdleRegionRequest";
 
     public IdleRegionRequest(RequestRegion requestRegion) {
 
@@ -31,5 +32,10 @@ public class IdleRegionRequest implements RequestState{
     @Override
     public void timeEventAfterFourSecond(File file) {
 
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }

@@ -7,6 +7,7 @@ import java.util.Queue;
 
 public class RequestApproval implements RequestState {
     private RequestRegion myRequestRegion;
+    public String name = "RequestApproval";
 
     public RequestApproval(RequestRegion requestRegion) {
     this.myRequestRegion=requestRegion;
@@ -32,5 +33,10 @@ public class RequestApproval implements RequestState {
     @Override
     public void timeEventAfterFourSecond(File file) {
 
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }
