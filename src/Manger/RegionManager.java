@@ -15,7 +15,7 @@ import idle.IdleRegion;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class RegionManager{
+public class RegionManager implements SystemState{
 
     private static DownloadRegion downloadRegion;
     private static IdleRegion idleRegion;
@@ -28,7 +28,7 @@ public class RegionManager{
     private static Queue<File> requestsQueue;
 
 
-    public RegionManager(){
+    public RegionManager(int diskSize){
 
         downloadRegion = new DownloadRegion();
         idleRegion = new IdleRegion();
@@ -38,7 +38,7 @@ public class RegionManager{
         userStatusRegion = new UserStatusRegion();
 
         requestsQueue = new LinkedList<>();
-        diskSize = 100;
+        setDiskSize(diskSize);
     }
 
     public static DownloadRegion getDownloadRegion() {
@@ -104,6 +104,16 @@ public class RegionManager{
         internetRegion.internetOn();
         downloadRegion.internetOn();
 //        movieRegion.internetOn();
+    }
+
+    @Override
+    public void turnOn() {
+
+    }
+
+    @Override
+    public void turnOff() {
+
     }
 
     public void errorFixed() {
