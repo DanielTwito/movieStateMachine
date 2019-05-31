@@ -1,3 +1,5 @@
+package Manger;
+
 import Download.DownloadIState;
 import Download.DownloadRegion;
 import Internet.InternetRegion;
@@ -34,8 +36,8 @@ public class RegionManager implements DownloadIState, InternetStatusState, Movie
         this.requestRegion = requestRegion;
         this.userStatusRegion = userStatusRegion;
 
-        this.requestsQueue = new LinkedList<>();
-        this.diskSize = 100;
+        requestsQueue = new LinkedList<>();
+        diskSize = 100;
     }
 
     public DownloadRegion getDownloadRegion() {
@@ -146,12 +148,12 @@ public class RegionManager implements DownloadIState, InternetStatusState, Movie
     }
 
     @Override
-    public void fileRequest(int fileSize) {
+    public void fileRequest(File file) {
 
     }
 
     @Override
-    public void timeEventAfterFourSecond(int fileSize) {
+    public void timeEventAfterFourSecond(File file) {
 
     }
 
