@@ -1,6 +1,6 @@
 package idle;
 
-public interface idleState {
+public interface IdleState {
 
     void downloadAborted ();
 

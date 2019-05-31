@@ -12,6 +12,11 @@ public class DownloadRegion implements DownloadIState {
     private DownloadIState finish;
     private DownloadIState waitingForInternet;
     private DownloadIState malfunction;
+
+    public DownloadIState getDownloadCurrentState() {
+        return downloadCurrentState;
+    }
+
     private DownloadIState downloadCurrentState;
 
 
