@@ -4,7 +4,7 @@ package Requests;
 import Manger.File;
 import Manger.RegionManager;
 
-public class RequestRegion implements RequestState {
+public class RequestRegion {
     private RequestState idleRegionRequest;
     private RequestState rejectRequest;
     private RequestState requestApproval;
@@ -26,13 +26,13 @@ public class RequestRegion implements RequestState {
     public RequestState getRejectRequest() {return rejectRequest;}
     public RequestState getRequestApproval() {return requestApproval;}
 
-    @Override
+
     public void fileRequest(File file) {
 
 
     }
 
-    @Override
+
     public void timeEventAfterFourSecond(File file) {
 
     }

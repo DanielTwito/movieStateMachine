@@ -1,6 +1,6 @@
 package Movie;
 
-public class MovieRegion implements MovieState {
+public class MovieRegion{
 
     private MovieState idleRegionMovie;
     private MovieState moveOn;
@@ -19,51 +19,45 @@ public class MovieRegion implements MovieState {
 
     public void setMovieCurrentState(MovieState movieCurrentState) {this.movieCurrentState = movieCurrentState;}
 
+    public MovieState getMovieCurrentState() {return movieCurrentState;}
     public MovieState getIdleRegionMovie() {return idleRegionMovie;}
     public MovieState getMoveOn() {return moveOn;}
     public MovieState getPuseMove() {return puseMove;}
 
-    @Override
     public void movieOn() {
 
     }
 
-    @Override
+
     public void downloadAborted() {
 
     }
 
-    @Override
     public void finishDownload() {
 
     }
 
-    @Override
     public void restartMovie() {
 
     }
 
-    @Override
+
     public void holdMovie() {
 
     }
 
-    @Override
     public void downloadError() {
 
     }
 
-    @Override
     public void internetOff() {
 
     }
 
-    @Override
     public void resume() {
 
     }
 
-    @Override
     public void whenInDownload() {
 
     }

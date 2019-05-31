@@ -1,7 +1,7 @@
 package Requests;
 
 import Manger.File;
-
+import Manger.RegionManager;
 public class RequestApproval implements RequestState {
     private RequestRegion myRequestRegion;
 

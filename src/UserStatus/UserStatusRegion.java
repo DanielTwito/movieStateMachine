@@ -1,7 +1,7 @@
 package UserStatus;
 
 
-public class UserStatusRegion implements UserStatusState {
+public class UserStatusRegion {
     private UserStatusState statusBeginner;
     private UserStatusState statusAdvanced;
     private UserStatusState statusProfessional;
@@ -19,26 +19,28 @@ public class UserStatusRegion implements UserStatusState {
 
     public void setUserStatusStateCurrent(UserStatusState userStatusStateCurrent) {this.userStatusStateCurrent = userStatusStateCurrent;}
 
+
+    public UserStatusState getUserStatusStateCurrent() {return userStatusStateCurrent;}
     public UserStatusState getStatusBeginner() {return statusBeginner;}
     public UserStatusState getStatusAdvanced() {return statusAdvanced;}
     public UserStatusState getStatusProfessional() {return statusProfessional;}
 
-    @Override
+
     public void whenPointsLessthenFour() {
 
     }
 
-    @Override
+
     public void whenPointsGreaterOrEqualFour() {
 
     }
 
-    @Override
+
     public void whenPointsLessthenSeven() {
 
     }
 
-    @Override
+
     public void whenPointsGreaterOrEqualSeven() {
 
     }
