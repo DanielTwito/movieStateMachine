@@ -1,6 +1,6 @@
 package Internet;
 
-public class InternetRegion implements InternetStatusState{
+public class InternetRegion{
 
     private InternetStatusState connectInternet;
     private InternetStatusState internetOff;
@@ -25,12 +25,10 @@ public class InternetRegion implements InternetStatusState{
         return internetOff;
     }
 
-    @Override
     public void internetOn() {
 
     }
 
-    @Override
     public void internetOff() {
 
     }

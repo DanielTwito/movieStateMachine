@@ -5,7 +5,7 @@ package Download;
  */
 
 
-public class DownloadRegion implements DownloadIState {
+public class DownloadRegion{
 
     private DownloadIState idleRegionDownload;
     private DownloadIState download;
@@ -31,42 +31,34 @@ public class DownloadRegion implements DownloadIState {
     }
 
 
-    @Override
     public void downloadFinish() {
 
     }
 
-    @Override
     public void downloadError() {
 
     }
 
-    @Override
     public void internetOff() {
 
     }
 
-    @Override
     public void internetOn() {
 
     }
 
-    @Override
     public void errorFixed() {
 
     }
 
-    @Override
     public void timeEventAfterThreeSecond() {
 
     }
 
-    @Override
     public void downloadAborted() {
 
     }
 
-    @Override
     public void whenQueueGreaterThenZero() {
 
     }
