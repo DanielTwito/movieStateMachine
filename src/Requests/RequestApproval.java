@@ -17,7 +17,7 @@ public class RequestApproval implements RequestState {
 
         Queue<File> q = RegionManager.getRequestsQueue();
         q.add(file);
-        System.out.println("file"+ file.getFileName() +" add to Download Queue Successfully! ");
+        System.out.println("file "+ file.getFileName() +" add to Download Queue Successfully!");
         myRequestRegion.setRequestCurrentState(myRequestRegion.getIdleRegionRequest());
 
     }

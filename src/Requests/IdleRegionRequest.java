@@ -19,7 +19,10 @@ public class IdleRegionRequest implements RequestState{
         int fileSize = file.getFileSize();
         if(diskSize >= fileSize){
             myRequestRegion.setRequestCurrentState(myRequestRegion.getRequestApproval());
+            ((RequestApproval)myRequestRegion.getRequestCurrentState()).doAction(file);
+
         }else{
+            System.out.println("your'e request to insert file "+file.getFileName()+" to the Download Queue  is rejected");
             myRequestRegion.setRequestCurrentState(myRequestRegion.getRejectRequest());
         }
 

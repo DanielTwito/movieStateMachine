@@ -23,10 +23,11 @@ public class RejectRequest implements RequestState {
         int fileSize = file.getFileSize();
         if(diskSize >= fileSize){
             myRequestRegion.setRequestCurrentState(myRequestRegion.getRequestApproval());
+            ((RequestApproval)myRequestRegion.getRequestCurrentState()).doAction(file);
 
         }else{
             System.out.println("Disk cant store this file");
-            myRequestRegion.setRequestCurrentState(myRequestRegion.getRequestApproval());
+            myRequestRegion.setRequestCurrentState(myRequestRegion.getIdleRegionRequest());
         }
 
     }
