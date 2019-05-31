@@ -1,5 +1,7 @@
 package Requests;
 
+import Manger.File;
+
 public class IdleRegionRequest implements RequestState{
 
     private RequestRegion myRequestRegion;
@@ -10,12 +12,12 @@ public class IdleRegionRequest implements RequestState{
     }
 
     @Override
-    public void fileRequest(int fileSize) {
+    public void fileRequest(File file) {
 
     }
 
     @Override
-    public void timeEventAfterFourSecond(int fileSize) {
+    public void timeEventAfterFourSecond(File file) {
 
     }
 }

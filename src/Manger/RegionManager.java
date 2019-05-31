@@ -1,3 +1,5 @@
+package Manger;
+
 import Download.DownloadIState;
 import Download.DownloadRegion;
 import Internet.InternetRegion;
@@ -146,12 +148,12 @@ public class RegionManager implements DownloadIState, InternetStatusState, Movie
     }
 
     @Override
-    public void fileRequest(int fileSize) {
+    public void fileRequest(File file) {
 
     }
 
     @Override
-    public void timeEventAfterFourSecond(int fileSize) {
+    public void timeEventAfterFourSecond(File file) {
 
     }
 

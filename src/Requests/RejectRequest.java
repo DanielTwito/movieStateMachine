@@ -1,5 +1,7 @@
 package Requests;
 
+import Manger.File;
+
 public class RejectRequest implements RequestState {
 
     private RequestRegion myRequestRegion;
@@ -9,12 +11,12 @@ public class RejectRequest implements RequestState {
     }
 
     @Override
-    public void fileRequest(int fileSize) {
+    public void fileRequest(File file) {
 
     }
 
     @Override
-    public void timeEventAfterFourSecond(int fileSize) {
+    public void timeEventAfterFourSecond(File file) {
 
     }
 }

@@ -1,3 +1,5 @@
+package Manger;
+
 public class File {
 
     private String fileName;

@@ -1,5 +1,9 @@
 package Requests;
 
+
+import Manger.File;
+import Manger.RegionManager;
+
 public class RequestRegion implements RequestState {
     private RequestState idleRegionRequest;
     private RequestState rejectRequest;
@@ -17,17 +21,19 @@ public class RequestRegion implements RequestState {
 
     public void setRequestCurrentState(RequestState requestCurrentState) {this.requestCurrentState = requestCurrentState;}
 
+    public RequestState getRequestCurrentState() {return requestCurrentState;}
     public RequestState getIdleRegionRequest() {return idleRegionRequest;}
     public RequestState getRejectRequest() {return rejectRequest;}
     public RequestState getRequestApproval() {return requestApproval;}
 
     @Override
-    public void fileRequest(int fileSize) {
+    public void fileRequest(File file) {
+
 
     }
 
     @Override
-    public void timeEventAfterFourSecond(int fileSize) {
+    public void timeEventAfterFourSecond(File file) {
 
     }
 }
