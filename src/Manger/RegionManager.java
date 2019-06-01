@@ -27,6 +27,8 @@ public class RegionManager implements SystemState{
     private static int diskSize;
     private static Queue<File> requestsQueue;
 
+    private static SystemManager mySystem;
+
     private static int point;
 
 
@@ -149,6 +151,7 @@ public class RegionManager implements SystemState{
 
     @Override
     public void turnOff() {
+        mySystem.setSystemCurrentState(mySystem.getSystemOff());
 
     }
 
@@ -210,4 +213,8 @@ public class RegionManager implements SystemState{
         userStatusRegion.whenPointsGreaterOrEqualSeven();
     }
 
+    @Override
+    public String toString() {
+        return "On";
+    }
 }
