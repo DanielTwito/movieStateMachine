@@ -24,7 +24,7 @@ public class IdleRegionMovie implements MovieState{
                 myMovieRegion.setMovieCurrentState(myMovieRegion.getMoveOn());
             }
             else{
-                System.out.println("The download present is not 20 or more yet. Can't Play Movie");
+                System.out.println("The download percent is not 20 or more yet. Can't Play Movie");
             }
 
         }

@@ -1,5 +1,7 @@
 package Download;
 import Manger.RegionManager;
+import Movie.MovieRegion;
+
 public class Malfunction implements DownloadIState {
 
     private DownloadRegion downloadRegion;
@@ -52,7 +54,8 @@ public class Malfunction implements DownloadIState {
         int newPoints = RegionManager.getPoint() -1;
         RegionManager.setPoint(newPoints);
         downloadRegion.setDownloadCurrentState(downloadRegion.getIdleRegionDownload());
-
+        MovieRegion mv = RegionManager.getMovieRegion();
+        mv.setMovieCurrentState(mv.getIdleRegionMovie());
     }
 
     @Override

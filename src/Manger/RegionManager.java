@@ -141,6 +141,7 @@ public class RegionManager implements SystemState{
 
     public void downloadError() {
         downloadRegion.downloadError();
+        movieRegion.downloadError();
     }
 
     public void internetOff() {
@@ -165,12 +166,14 @@ public class RegionManager implements SystemState{
 
     @Override
     public void turnOn() {
+        downloadRegion.setFlag(true);
 
     }
 
     @Override
     public void turnOff() {
         mySystem.setSystemCurrentState(mySystem.getSystemOff());
+        downloadRegion.setFlag(false);
 
     }
 

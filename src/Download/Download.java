@@ -8,6 +8,11 @@ import java.util.Queue;
 public class Download  implements DownloadIState {
 
     private DownloadRegion downloadRegion;
+
+    public void setStatusFile(double statusFile) {
+        this.statusFile = statusFile;
+    }
+
     private double statusFile;
 
 
@@ -38,11 +43,12 @@ public class Download  implements DownloadIState {
                     e.printStackTrace();
                 }
 
-                if(statusFile>=downloadRegion.file.getFileSize()){
+                if(downloadRegion.file == null || statusFile>=downloadRegion.file.getFileSize()){
                     finishDownload();
                     break;
                 }
-                if(statusFile/downloadRegion.file.getFileSize() >= 20){
+                double percent = statusFile/downloadRegion.file.getFileSize();
+                if(percent >= 0.2){
                     RegionManager.moreThanTwentyPercent();
                 }
             }

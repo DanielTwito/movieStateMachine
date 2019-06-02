@@ -1,5 +1,7 @@
 package Movie;
 
+import Manger.RegionManager;
+
 public class MovieOn implements MovieState {
 
     private MovieRegion myMovieRegion;
@@ -11,7 +13,21 @@ public class MovieOn implements MovieState {
 
     @Override
     public void movieOn() {
-        myMovieRegion.currentTime++;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                while (RegionManager.getMovieRegion().getMovieCurrentState() instanceof MovieOn){
+                    myMovieRegion.currentTime++;
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
+
 
     }
 

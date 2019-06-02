@@ -30,7 +30,15 @@ public class Main {
 
         while (true) {
             String input = myObj.nextLine();
-            int in = Integer.parseInt(input);
+            int in =0;
+            if(input.equals(""))
+                continue;
+            try {
+                in = Integer.parseInt(input);
+            }
+            catch (Exception e){
+                continue;
+            }
             switch (in) {
                 case 1:
                     mng.internetOn();
@@ -76,6 +84,7 @@ public class Main {
                 case 13:
                     mng.movieOff();
                     break;
+
             }
         }
 

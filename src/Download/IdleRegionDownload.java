@@ -67,6 +67,8 @@ public class IdleRegionDownload implements DownloadIState{
         if(diskSize >= fileSize){
             q.poll();
             System.out.println("file "+ downloadRegion.file.getFileName() +" Remove From Download Queue Successfully!");
+            Download d =(Download) downloadRegion.getDownload();
+            d.setStatusFile(0);
             downloadRegion.setDownloadCurrentState(downloadRegion.getDownload());
 
             // entry to download
