@@ -101,6 +101,8 @@ public class Download  implements DownloadIState {
         downloadRegion.setFlag(false);
         int newPoints = RegionManager.getPoint() -1;
         RegionManager.setPoint(newPoints);
+        RegionManager.setDiskSize(RegionManager.getDiskSize()+downloadRegion.file.getFileSize());
+        downloadRegion.file = null;
         downloadRegion.setDownloadCurrentState(downloadRegion.getIdleRegionDownload());
 
     }
