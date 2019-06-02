@@ -19,9 +19,14 @@ public class IdleRegionMovie implements MovieState{
     public void movieOn() {
         if(RegionManager.getInternetRegion().getInternetStatusCurrentState() instanceof ConnectInternet){
             //and if presence of download >20%
-            //if()
-            myMovieRegion.currentTime=0;
-            myMovieRegion.setMovieCurrentState(myMovieRegion.getMoveOn());
+            if(RegionManager.isTwentyPrecent()){
+                myMovieRegion.currentTime=0;
+                myMovieRegion.setMovieCurrentState(myMovieRegion.getMoveOn());
+            }
+            else{
+                System.out.println("The download present is not 20 or more yet. Can't Play Movie");
+            }
+
         }
         else{
             System.out.println("No Internet Connection. Can't Play Movie");

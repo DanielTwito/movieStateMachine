@@ -23,6 +23,10 @@ public class RegionManager implements SystemState{
     private static int diskSize;
     private static Queue<File> requestsQueue;
 
+
+
+    private static boolean twentyPrecent;
+
     private SystemManager mySystem;
 
     private static int point;
@@ -40,6 +44,7 @@ public class RegionManager implements SystemState{
         setDiskSize(diskSize);
         point=0;
         mySystem=systemManager;
+        twentyPrecent=false;
     }
 
     public static DownloadRegion getDownloadRegion() {
@@ -83,8 +88,6 @@ public class RegionManager implements SystemState{
             RegionManager.diskSize = diskSize;
     }
 
-
-
     public static void setPoint(int pointNew) {
         int currPoint=point;
         RegionManager.point = pointNew;
@@ -109,12 +112,24 @@ public class RegionManager implements SystemState{
         }
     }
 
+    public static boolean isTwentyPrecent() {
+        return twentyPrecent;
+    }
+
+    public static void setTwentyPrecent(boolean twentyPrecent) {
+        RegionManager.twentyPrecent = twentyPrecent;
+    }
+
     public static void inDownload(){
         movieRegion.whenInDownload();
     }
 
     public static int getUserStatus(){
         return userStatusRegion.getUserStatus();
+    }
+
+    public static void moreThanTwentyPercent(){
+        setTwentyPrecent(true);
     }
 
 

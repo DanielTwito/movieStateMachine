@@ -60,6 +60,7 @@ public class PuseMove implements MovieState {
     @Override
     public void whenInDownload() {
         if(!myMovieRegion.hold){
+            System.out.println("Event when(inDownload)[!hold] was fired");
             myMovieRegion.setMovieCurrentState(myMovieRegion.getMoveOn());
 
         }

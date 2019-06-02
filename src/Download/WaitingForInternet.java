@@ -12,6 +12,11 @@ public class WaitingForInternet implements DownloadIState {
     }
 
     @Override
+    public void Downloading() {
+
+    }
+
+    @Override
     public void finishDownload() {
     }
 
@@ -31,6 +36,9 @@ public class WaitingForInternet implements DownloadIState {
     @Override
     public void internetOn() {
         downloadRegion.setDownloadCurrentState(downloadRegion.getDownload());
+        downloadRegion.setFlag(true);
+        DownloadIState download = downloadRegion.getDownload();
+        download.Downloading();
         RegionManager.inDownload();
     }
 

@@ -14,6 +14,11 @@ public class IdleRegionDownload implements DownloadIState{
     }
 
     @Override
+    public void Downloading() {
+
+    }
+
+    @Override
     public void finishDownload() {
 
     }
@@ -68,6 +73,12 @@ public class IdleRegionDownload implements DownloadIState{
             int newSize = RegionManager.getDiskSize() - file.getFileSize();
             RegionManager.setDiskSize(newSize);
             RegionManager.inDownload();
+
+
+            downloadRegion.setFlag(true);
+            DownloadIState download = downloadRegion.getDownload();
+            download.Downloading();
+
 
         }
 

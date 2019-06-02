@@ -2,7 +2,7 @@ package Download;
 import Manger.File;
 
 public interface DownloadIState {
-
+    void Downloading();
     void finishDownload();
     void downloadError();
     void internetOff();

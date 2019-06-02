@@ -16,7 +16,7 @@ public class DownloadRegion{
     private DownloadIState malfunction;
 
     private DownloadIState downloadCurrentState;
-
+    private boolean flag;
 
     public DownloadRegion() {
         idleRegionDownload = new IdleRegionDownload(this);
@@ -26,6 +26,15 @@ public class DownloadRegion{
         malfunction = new Malfunction(this);
 
         downloadCurrentState = idleRegionDownload;
+        flag = false;
+    }
+
+    public boolean getFlag(){
+        return flag;
+    }
+
+    public void setFlag(boolean f){
+        flag = f;
     }
 
 
