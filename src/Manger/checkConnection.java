@@ -12,6 +12,7 @@ public class checkConnection implements SystemState {
     @Override
     public void internetOn() {
         mySystem.setSystemCurrentState(mySystem.getSystemOn());
+        mySystem.getSystemOn().internetOn();
 
     }
 

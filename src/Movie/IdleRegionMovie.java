@@ -80,6 +80,6 @@ public class IdleRegionMovie implements MovieState{
 
     @Override
     public String toString() {
-        return "Idle";
+        return "IdleMovieRegion";
     }
 }

@@ -1,5 +1,6 @@
 package Manger;
 
+import Download.Download;
 import Download.DownloadRegion;
 import Internet.InternetRegion;
 import Movie.MovieRegion;
@@ -160,6 +161,10 @@ public class RegionManager implements SystemState{
     }
 
     public void internetOn() {
+        downloadRegion.setFlag(true);
+        if(downloadRegion.getDownloadCurrentState() instanceof Download){
+            downloadRegion.getWaitingForInternet().internetOn();
+        }
         internetRegion.internetOn();
         downloadRegion.internetOn();
 //        movieRegion.internetOn();
@@ -167,7 +172,7 @@ public class RegionManager implements SystemState{
 
     @Override
     public void turnOn() {
-        downloadRegion.setFlag(true);
+
 
     }
 

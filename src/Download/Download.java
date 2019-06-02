@@ -23,7 +23,6 @@ public class Download  implements DownloadIState {
 
     public void Downloading(){
 
-        Runnable target;
         System.out.println("Downloading...");
         Thread t = new Thread(() -> {
             while (downloadRegion.getFlag()){
@@ -61,6 +60,7 @@ public class Download  implements DownloadIState {
     @Override
     public void finishDownload() {
         downloadRegion.setFlag(false);
+        RegionManager.setTwentyPrecent(false);
         int newPoints = RegionManager.getPoint() +1;
         RegionManager.setPoint(newPoints);
         downloadRegion.file = null;
