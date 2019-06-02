@@ -30,6 +30,8 @@ public class Main {
 
         while (true) {
             String input = myObj.nextLine();
+            if(input.equals(""))
+                continue;
             int in = Integer.parseInt(input);
             switch (in) {
                 case 1:
