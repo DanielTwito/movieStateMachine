@@ -84,7 +84,6 @@ public class Main {
                 case 13:
                     mng.movieOff();
                     break;
-
             }
         }
 
