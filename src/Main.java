@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-         SystemManager mng=new SystemManager(1000);
+        SystemManager mng=new SystemManager(1000);
         mng.internetOff();
         mng.internetOn();
 

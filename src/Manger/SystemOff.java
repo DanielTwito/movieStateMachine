@@ -11,7 +11,7 @@ public class SystemOff implements SystemState{
 
     @Override
     public void turnOn() {
-        mySystem.setSystemCurrentState(mySystem.getWaitingFoeInternet());
+        mySystem.setSystemCurrentState(mySystem.getCheckConnection());
 
     }
 

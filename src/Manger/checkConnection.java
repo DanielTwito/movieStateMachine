@@ -1,6 +1,6 @@
 package Manger;
 
-public class WaitingForInternet implements SystemState {
+public class checkConnection implements SystemState {
 
     private static SystemManager mySystem;
 
@@ -36,7 +36,6 @@ public class WaitingForInternet implements SystemState {
     @Override
     public void internetOff() {
         System.out.println("No Internet Connection");
-
     }
 
     @Override

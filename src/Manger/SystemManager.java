@@ -3,14 +3,14 @@ package Manger;
 public class SystemManager{
 
     private static SystemState systemOn;
-    private static SystemState waitingFoeInternet;
+    private static SystemState checkConnection;
     private static SystemState systemOff;
 
     private SystemState systemCurrentState;
 
     public SystemManager(int diskSize){
         systemOn=new RegionManager(diskSize) ;
-        waitingFoeInternet=new WaitingForInternet();
+        checkConnection =new checkConnection();
         systemOff=new SystemOff();
         systemCurrentState=systemOff;
 
@@ -35,8 +35,8 @@ public class SystemManager{
         return systemOn;
     }
 
-    public SystemState getWaitingFoeInternet() {
-        return waitingFoeInternet;
+    public SystemState getCheckConnection() {
+        return checkConnection;
     }
 
     public SystemState getSystemOff() {
