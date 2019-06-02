@@ -84,6 +84,12 @@ public class Main {
                 case 13:
                     mng.movieOff();
                     break;
+                case 14:
+                    Scanner scanne = new Scanner(System.in);
+                    System.out.println("Pleas enter disk size");
+                    String s = scanne.nextLine();
+                    mng.setDiskSize(Integer.parseInt(s));
+                    break;
             }
         }
 

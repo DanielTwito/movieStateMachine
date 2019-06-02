@@ -134,4 +134,7 @@ public class SystemManager{
     }
 
 
+    public void setDiskSize(int size) {
+        RegionManager.setDiskSize(size);
+    }
 }
