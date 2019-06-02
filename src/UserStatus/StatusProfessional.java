@@ -33,4 +33,9 @@ public class StatusProfessional implements UserStatusState {
     public String toString() {
         return "Professional Status";
     }
+
+    @Override
+    public int getUserStatus() {
+        return 3;
+    }
 }

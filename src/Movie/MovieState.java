@@ -10,6 +10,7 @@ public interface MovieState {
     void downloadError();
     void internetOff();
     void resume();
+    void movieOff();
     //not sure about this function
     //this is the transition between puse_movie to move_on in the state machine
     void whenInDownload();

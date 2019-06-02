@@ -23,12 +23,12 @@ public class RegionManager implements SystemState{
     private static int diskSize;
     private static Queue<File> requestsQueue;
 
-    private static SystemManager mySystem;
+    private SystemManager mySystem;
 
     private static int point;
 
 
-    public RegionManager(int diskSize){
+    public RegionManager(int diskSize,SystemManager systemManager){
 
         downloadRegion = new DownloadRegion();
         idleRegion = new IdleRegion();
@@ -39,6 +39,7 @@ public class RegionManager implements SystemState{
         requestsQueue = new LinkedList<>();
         setDiskSize(diskSize);
         point=0;
+        mySystem=systemManager;
     }
 
     public static DownloadRegion getDownloadRegion() {
@@ -112,6 +113,11 @@ public class RegionManager implements SystemState{
         movieRegion.whenInDownload();
     }
 
+    public static int getUserStatus(){
+        return userStatusRegion.getUserStatus();
+    }
+
+
     public void downloadFinish() {
 
     }
@@ -181,8 +187,8 @@ public class RegionManager implements SystemState{
         movieRegion.holdMovie();
     }
 
-    public void whenQueueGreaterThenZero() {
-
+    public static void whenQueueGreaterThenZero() {
+        downloadRegion.whenQueueGreaterThenZero();
     }
 
     public void fileRequest(File file) {
@@ -207,6 +213,11 @@ public class RegionManager implements SystemState{
 
     public void whenPointsGreaterOrEqualSeven() {
         userStatusRegion.whenPointsGreaterOrEqualSeven();
+    }
+
+    @Override
+    public void movieOff() {
+        movieRegion.movieOff();
     }
 
     @Override

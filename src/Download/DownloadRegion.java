@@ -1,5 +1,7 @@
 package Download;
 
+import Manger.File;
+
 /**
  * this class need to support history!
  */
@@ -33,37 +35,39 @@ public class DownloadRegion{
 
 
     public void finishDownload() {
-
+        downloadCurrentState.finishDownload();
     }
 
     public void downloadError() {
-
+        downloadCurrentState.downloadError();
     }
 
     public void internetOff() {
-
+        downloadCurrentState.internetOff();
     }
 
     public void internetOn() {
-
+        downloadCurrentState.internetOn();
     }
 
     public void errorFixed() {
-
+        downloadCurrentState.errorFixed();
     }
 
     public void timeEventAfterThreeSecond() {
-
+        downloadCurrentState.timeEventAfterThreeSecond();
     }
 
-    public void downloadAborted() {
-
+    public void downloadAborted(File x, File file) {
+        downloadCurrentState.downloadAborted(x, file);
     }
 
     public void whenQueueGreaterThenZero() {
-
+        downloadCurrentState.whenQueueGreaterThenZero();
     }
-
+    public String toString() {
+        return "Download Region";
+    }
 
     public DownloadIState getIdleRegionDownload() {
         return idleRegionDownload;
@@ -86,7 +90,9 @@ public class DownloadRegion{
     }
 
     public void setDownloadCurrentState(DownloadIState newCurrentState) {
+        System.out.println("Exit "+this.downloadCurrentState.toString());
         downloadCurrentState = newCurrentState;
+        System.out.println("Enter "+this.downloadCurrentState.toString());
     }
 
 

@@ -9,9 +9,9 @@ public class SystemManager{
     private SystemState systemCurrentState;
 
     public SystemManager(int diskSize){
-        systemOn=new RegionManager(diskSize) ;
-        checkConnection =new checkConnection();
-        systemOff=new SystemOff();
+        systemOn=new RegionManager(diskSize,this) ;
+        checkConnection =new checkConnection(this);
+        systemOff=new SystemOff(this);
         systemCurrentState=systemOff;
 
     }
@@ -48,7 +48,10 @@ public class SystemManager{
     }
 
     public void setSystemCurrentState(SystemState systemCurrentState) {
+        System.out.println("Exit "+this.systemCurrentState.toString());
         this.systemCurrentState = systemCurrentState;
+        System.out.println("Enter "+this.systemCurrentState.toString());
+
     }
 
     public void downloadFinish() {
@@ -100,9 +103,9 @@ public class SystemManager{
         systemCurrentState.holdMovie();
     }
 
-    public void whenQueueGreaterThenZero() {
-        systemCurrentState.whenQueueGreaterThenZero();
-    }
+//    public void whenQueueGreaterThenZero() {
+//        systemCurrentState.whenQueueGreaterThenZero();
+//    }
 
     public void fileRequest(File file) {
         systemCurrentState.fileRequest(file);    }
@@ -125,6 +128,10 @@ public class SystemManager{
 
     public void whenPointsGreaterOrEqualSeven() {
         systemCurrentState.whenPointsGreaterOrEqualSeven();    }
+
+    public void movieOff(){
+        systemCurrentState.movieOff();
+    }
 
 
 }

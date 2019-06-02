@@ -8,8 +8,6 @@ public class IdleRegionMovie implements MovieState{
     private MovieRegion myMovieRegion;
 
 
-
-
     public IdleRegionMovie(MovieRegion movieRegion) {
     this.myMovieRegion=movieRegion;
     myMovieRegion.currentTime=0;
@@ -21,10 +19,13 @@ public class IdleRegionMovie implements MovieState{
     public void movieOn() {
         if(RegionManager.getInternetRegion().getInternetStatusCurrentState() instanceof ConnectInternet){
             //and if presence of download >20%
+            //if()
             myMovieRegion.currentTime=0;
             myMovieRegion.setMovieCurrentState(myMovieRegion.getMoveOn());
         }
-
+        else{
+            System.out.println("No Internet Connection. Can't Play Movie");
+        }
     }
 
     @Override
@@ -59,6 +60,11 @@ public class IdleRegionMovie implements MovieState{
 
     @Override
     public void resume() {
+
+    }
+
+    @Override
+    public void movieOff() {
 
     }
 

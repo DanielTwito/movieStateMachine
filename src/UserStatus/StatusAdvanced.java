@@ -34,4 +34,9 @@ public class StatusAdvanced implements UserStatusState {
     public String toString() {
         return "Advance Status";
     }
+
+    @Override
+    public int getUserStatus() {
+        return 2;
+    }
 }

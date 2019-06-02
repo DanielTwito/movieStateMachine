@@ -44,17 +44,23 @@ public class IdleRegionDownload implements DownloadIState{
     }
 
     @Override
-    public void downloadAborted() {
+    public void downloadAborted(File x, File file) {
 
     }
 
     @Override
-    public void whenQueueGreaterThenZero(File file) {
+    public String toString() {
+        return "Idle Region Download";
+    }
+
+    @Override
+    public void whenQueueGreaterThenZero() {
         int diskSize = RegionManager.getDiskSize();
+        Queue<File> q = RegionManager.getRequestsQueue();
+        File file=(File)q.peek();
         int fileSize = file.getFileSize();
         if(diskSize >= fileSize){
-            Queue<File> q = RegionManager.getRequestsQueue();
-            q.remove();
+            q.poll();
             System.out.println("file "+ file.getFileName() +" Remove From Download Queue Successfully!");
             downloadRegion.setDownloadCurrentState(downloadRegion.getDownload());
 

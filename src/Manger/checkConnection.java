@@ -2,7 +2,11 @@ package Manger;
 
 public class checkConnection implements SystemState {
 
-    private static SystemManager mySystem;
+    private SystemManager mySystem;
+
+    public checkConnection(SystemManager systemManager){
+        mySystem=systemManager;
+    }
 
 
     @Override
@@ -83,10 +87,6 @@ public class checkConnection implements SystemState {
 
     }
 
-    @Override
-    public void whenQueueGreaterThenZero() {
-
-    }
 
     @Override
     public void fileRequest(File file) {
@@ -115,6 +115,11 @@ public class checkConnection implements SystemState {
 
     @Override
     public void whenPointsGreaterOrEqualSeven() {
+
+    }
+
+    @Override
+    public void movieOff() {
 
     }
 

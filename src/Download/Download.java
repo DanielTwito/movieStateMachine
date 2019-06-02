@@ -56,4 +56,11 @@ public class Download  implements DownloadIState {
     public void whenQueueGreaterThenZero() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Download";
+    }
+
+
 }

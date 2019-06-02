@@ -18,13 +18,14 @@ public interface SystemState {
     void finishDownload();
     void restartMovie();
     void holdMovie();
-    void whenQueueGreaterThenZero();
+    //void whenQueueGreaterThenZero();
     void fileRequest(File file);
     void timeEventAfterFourSecond(File file);
     void whenPointsLessthenFour();
     void whenPointsGreaterOrEqualFour();
     void whenPointsLessthenSeven();
     void whenPointsGreaterOrEqualSeven();
+    void movieOff();
 
 
     String toString();

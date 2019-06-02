@@ -33,4 +33,9 @@ public class StatusBeginner implements UserStatusState {
     public String toString() {
         return "Beginner Status";
     }
+
+    @Override
+    public int getUserStatus() {
+        return 1;
+    }
 }

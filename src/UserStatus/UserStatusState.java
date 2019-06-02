@@ -12,4 +12,5 @@ public interface UserStatusState {
     void whenPointsGreaterOrEqualSeven();
     //string to print the name of the state
     String toString();
+    int getUserStatus();
 }

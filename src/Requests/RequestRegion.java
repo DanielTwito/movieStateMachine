@@ -19,10 +19,9 @@ public class RequestRegion {
 
     public void setRequestCurrentState(RequestState requestCurrentState) {
 
-        System.out.println("exiting "+ this.requestCurrentState.getName());
+        System.out.println("Exit "+ this.requestCurrentState.getName());
         this.requestCurrentState = requestCurrentState;
-        System.out.println("entering "+this.requestCurrentState.getName());
-
+        System.out.println("Enter "+this.requestCurrentState.getName());
     }
 
     public RequestState getRequestCurrentState() {return requestCurrentState;}

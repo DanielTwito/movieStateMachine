@@ -30,6 +30,11 @@ public class Malfunction implements DownloadIState {
     }
 
     @Override
+    public String toString() {
+        return "Malfunction";
+    }
+
+    @Override
     public void errorFixed() {
         downloadRegion.setDownloadCurrentState(downloadRegion.getDownload());
         RegionManager.inDownload();
@@ -41,7 +46,7 @@ public class Malfunction implements DownloadIState {
     }
 
     @Override
-    public void downloadAborted() {
+    public void downloadAborted(File x, File file) {
 
     }
 

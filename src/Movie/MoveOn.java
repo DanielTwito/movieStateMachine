@@ -56,6 +56,11 @@ public class MoveOn implements MovieState {
     }
 
     @Override
+    public void movieOff() {
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getIdleRegionMovie());
+    }
+
+    @Override
     public void whenInDownload() {
 
     }

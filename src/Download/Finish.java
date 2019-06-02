@@ -1,5 +1,7 @@
 package Download;
 
+import Manger.File;
+
 public class Finish implements DownloadIState {
 
     DownloadRegion downloadRegion;
@@ -39,12 +41,17 @@ public class Finish implements DownloadIState {
     }
 
     @Override
-    public void downloadAborted() {
+    public void downloadAborted(File x, File file) {
 
     }
 
     @Override
     public void whenQueueGreaterThenZero() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Finish";
     }
 }

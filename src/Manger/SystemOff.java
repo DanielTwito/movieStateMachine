@@ -2,7 +2,11 @@ package Manger;
 
 public class SystemOff implements SystemState{
 
-    private static SystemManager mySystem;
+    private SystemManager mySystem;
+
+    public SystemOff(SystemManager systemManager){
+        mySystem=systemManager;
+    }
 
     @Override
     public void internetOn() {
@@ -80,10 +84,6 @@ public class SystemOff implements SystemState{
 
     }
 
-    @Override
-    public void whenQueueGreaterThenZero() {
-
-    }
 
     @Override
     public void fileRequest(File file) {
@@ -112,6 +112,11 @@ public class SystemOff implements SystemState{
 
     @Override
     public void whenPointsGreaterOrEqualSeven() {
+
+    }
+
+    @Override
+    public void movieOff() {
 
     }
 

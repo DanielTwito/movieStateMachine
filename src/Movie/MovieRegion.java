@@ -38,6 +38,10 @@ public class MovieRegion{
         movieCurrentState.movieOn();
     }
 
+    public void movieOff(){
+        movieCurrentState.movieOff();
+    }
+
 
     public void downloadAborted() {
         movieCurrentState.downloadAborted();

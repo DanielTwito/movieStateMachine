@@ -15,12 +15,11 @@ public class RequestApproval implements RequestState {
 
 
     public void doAction(File file){
-
         Queue<File> q = RegionManager.getRequestsQueue();
         q.add(file);
         System.out.println("file "+ file.getFileName() +" add to Download Queue Successfully!");
+        RegionManager.whenQueueGreaterThenZero();
         myRequestRegion.setRequestCurrentState(myRequestRegion.getIdleRegionRequest());
-
     }
 
 

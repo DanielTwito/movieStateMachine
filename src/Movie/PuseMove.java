@@ -53,6 +53,11 @@ public class PuseMove implements MovieState {
     }
 
     @Override
+    public void movieOff() {
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getIdleRegionMovie());
+    }
+
+    @Override
     public void whenInDownload() {
         if(!myMovieRegion.hold){
             myMovieRegion.setMovieCurrentState(myMovieRegion.getMoveOn());

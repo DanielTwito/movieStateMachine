@@ -49,4 +49,8 @@ public class UserStatusRegion {
         userStatusStateCurrent.whenPointsGreaterOrEqualSeven();
     }
 
+    public int getUserStatus(){
+         return userStatusStateCurrent.getUserStatus();
+    }
+
 }
