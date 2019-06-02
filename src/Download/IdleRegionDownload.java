@@ -69,6 +69,7 @@ public class IdleRegionDownload implements DownloadIState{
             System.out.println("file "+ downloadRegion.file.getFileName() +" Remove From Download Queue Successfully!");
             Download d =(Download) downloadRegion.getDownload();
             d.setStatusFile(0);
+            RegionManager.setTwentyPrecent(false);
             downloadRegion.setDownloadCurrentState(downloadRegion.getDownload());
 
             // entry to download

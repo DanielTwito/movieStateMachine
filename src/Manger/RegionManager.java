@@ -137,6 +137,7 @@ public class RegionManager implements SystemState{
 
     public void downloadFinish() {
         downloadRegion.finishDownload();
+        movieRegion.finishDownload();
     }
 
     public void downloadError() {

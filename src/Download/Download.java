@@ -45,6 +45,7 @@ public class Download  implements DownloadIState {
 
                 if(downloadRegion.file == null || statusFile>=downloadRegion.file.getFileSize()){
                     finishDownload();
+                    RegionManager.getMovieRegion().finishDownload();
                     break;
                 }
                 double percent = statusFile/downloadRegion.file.getFileSize();

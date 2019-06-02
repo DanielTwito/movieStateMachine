@@ -22,6 +22,8 @@ public class MovieRegion{
     }
 
     public void setMovieCurrentState(MovieState movieCurrentState) {
+        if(movieCurrentState.toString().equals(getMovieCurrentState().toString()))
+            return;
         System.out.println("Exit "+this.movieCurrentState.toString());
         this.movieCurrentState = movieCurrentState;
         System.out.println("Enter "+this.movieCurrentState.toString());
