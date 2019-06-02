@@ -19,6 +19,7 @@ public class RejectRequest implements RequestState {
 
     @Override
     public void timeEventAfterFourSecond(File file) {
+        System.out.println("after 4 second");
         int diskSize = RegionManager.getDiskSize();
         int fileSize = file.getFileSize();
         if(diskSize >= fileSize){

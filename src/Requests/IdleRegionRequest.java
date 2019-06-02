@@ -25,6 +25,8 @@ public class IdleRegionRequest implements RequestState{
         }else{
             System.out.println("your'e request to insert file "+file.getFileName()+" to the Download Queue  is rejected");
             myRequestRegion.setRequestCurrentState(myRequestRegion.getRejectRequest());
+            myRequestRegion.getRejectRequest().timeEventAfterFourSecond(file);
+
         }
 
     }
