@@ -12,8 +12,8 @@ public class MovieRegion{
 
     public MovieRegion(){
         idleRegionMovie = new IdleRegionMovie(this);
-        moveOn = new MoveOn(this);
-        puseMove = new PuseMove(this);
+        moveOn = new MovieOn(this);
+        puseMove = new PauseMovie(this);
 
         //initial state in movie regine
         movieCurrentState = idleRegionMovie;

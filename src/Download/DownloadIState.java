@@ -1,7 +1,7 @@
 package Download;
-import Manger.File;
 
 public interface DownloadIState {
+
     void Downloading();
     void finishDownload();
     void downloadError();
@@ -9,7 +9,7 @@ public interface DownloadIState {
     void internetOn();
     void errorFixed();
     void timeEventAfterThreeSecond();
-    void downloadAborted(File x, File file);
+    void downloadAborted();
     String toString();
 
     //for the event when(Queue > 0)

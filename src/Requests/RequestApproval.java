@@ -6,6 +6,7 @@ import Manger.RegionManager;
 import java.util.Queue;
 
 public class RequestApproval implements RequestState {
+
     private RequestRegion myRequestRegion;
     public String name = "RequestApproval";
 

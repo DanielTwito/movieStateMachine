@@ -1,15 +1,17 @@
 package Movie;
 
-public class PuseMove implements MovieState {
+public class MovieOn implements MovieState {
 
     private MovieRegion myMovieRegion;
 
-    public PuseMove(MovieRegion movieRegion) {
-    this.myMovieRegion=movieRegion;
+    public MovieOn(MovieRegion movieRegion) {
+
+        this.myMovieRegion=movieRegion;
     }
 
     @Override
     public void movieOn() {
+        myMovieRegion.currentTime++;
 
     }
 
@@ -27,28 +29,30 @@ public class PuseMove implements MovieState {
 
     @Override
     public void restartMovie() {
+        myMovieRegion.currentTime=0;
 
     }
 
     @Override
     public void holdMovie() {
+        myMovieRegion.hold=true;
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getPuseMove());
 
     }
 
     @Override
     public void downloadError() {
-
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getPuseMove());
     }
 
     @Override
     public void internetOff() {
+        myMovieRegion.setMovieCurrentState(myMovieRegion.getPuseMove());
 
     }
 
     @Override
     public void resume() {
-        myMovieRegion.hold=false;
-        myMovieRegion.setMovieCurrentState(myMovieRegion.getMoveOn());
 
     }
 
@@ -59,15 +63,11 @@ public class PuseMove implements MovieState {
 
     @Override
     public void whenInDownload() {
-        if(!myMovieRegion.hold){
-            System.out.println("Event when(inDownload)[!hold] was fired");
-            myMovieRegion.setMovieCurrentState(myMovieRegion.getMoveOn());
 
-        }
     }
 
     @Override
     public String toString() {
-        return "Pause Movie";
+        return "Movie On";
     }
 }

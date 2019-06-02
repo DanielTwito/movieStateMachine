@@ -1,6 +1,5 @@
 package Download;
 
-import Manger.File;
 import Manger.RegionManager;
 
 public class WaitingForInternet implements DownloadIState {
@@ -58,7 +57,8 @@ public class WaitingForInternet implements DownloadIState {
     }
 
     @Override
-    public void downloadAborted(File x, File file) {
+    public void downloadAborted() {
+        downloadRegion.getDownload().downloadAborted();
 
     }
 

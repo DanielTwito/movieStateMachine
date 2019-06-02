@@ -1,5 +1,4 @@
 package Download;
-import Manger.File;
 import Manger.RegionManager;
 public class Malfunction implements DownloadIState {
 
@@ -50,18 +49,19 @@ public class Malfunction implements DownloadIState {
 
     @Override
     public void timeEventAfterThreeSecond() {
+        int newPoints = RegionManager.getPoint() -1;
+        RegionManager.setPoint(newPoints);
+        downloadRegion.setDownloadCurrentState(downloadRegion.getIdleRegionDownload());
 
     }
 
     @Override
-    public void downloadAborted(File x, File file) {
-
+    public void downloadAborted() {
+        downloadRegion.getDownload().downloadAborted();
     }
 
     @Override
     public void whenQueueGreaterThenZero() {
-        int newPoints = RegionManager.getPoint() -1;
-        RegionManager.setPoint(newPoints);
 
     }
 }

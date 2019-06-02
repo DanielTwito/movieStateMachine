@@ -90,12 +90,14 @@ public class RegionManager implements SystemState{
 
     public static void setPoint(int pointNew) {
         int currPoint=point;
+        if(pointNew<0)
+            return;
         RegionManager.point = pointNew;
         if(currPoint==3&&point==4){
             userStatusRegion.whenPointsGreaterOrEqualFour();
             System.out.println("Event when(point>=4) was fired");
         }
-        else if(currPoint==4&&point==5){
+        else if(currPoint==4&&point==3){
             userStatusRegion.whenPointsLessthenFour();
             System.out.println("Event when(point<4) was fired");
 
@@ -105,7 +107,7 @@ public class RegionManager implements SystemState{
             System.out.println("Event when(point>=7) was fired");
 
         }
-        else if(currPoint==7&&point==8){
+        else if(currPoint==7&&point==6){
             userStatusRegion.whenPointsLessthenSeven();
             System.out.println("Event when(point<7) was fired");
 
@@ -134,11 +136,11 @@ public class RegionManager implements SystemState{
 
 
     public void downloadFinish() {
-
+        downloadRegion.finishDownload();
     }
 
     public void downloadError() {
-
+        downloadRegion.downloadError();
     }
 
     public void internetOff() {
@@ -186,7 +188,8 @@ public class RegionManager implements SystemState{
     }
 
     public void downloadAborted() {
-        idleRegion.downloadAborted();
+        downloadRegion.downloadAborted();
+        movieRegion.downloadAborted();
     }
 
     public void finishDownload() {
@@ -237,6 +240,6 @@ public class RegionManager implements SystemState{
 
     @Override
     public String toString() {
-        return "On";
+        return "SystemOn";
     }
 }

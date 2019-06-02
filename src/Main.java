@@ -24,13 +24,13 @@ public class Main {
                 "  10- restartMovie();\n" +
                 "  11- holdMovie();\n" +
                 "  12- fileRequest(File file);\n"+
-                "  13- movieOff\n");
+                "  13- movieOff\n\n");
 
         SystemManager mng=new SystemManager(1000);
 
         while (true) {
             String input = myObj.nextLine();
-            int in = Integer.parseInt(input);;
+            int in = Integer.parseInt(input);
             switch (in) {
                 case 1:
                     mng.internetOn();

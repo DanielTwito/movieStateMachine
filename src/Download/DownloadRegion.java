@@ -17,6 +17,7 @@ public class DownloadRegion{
 
     private DownloadIState downloadCurrentState;
     private boolean flag;
+    public File file;
 
     public DownloadRegion() {
         idleRegionDownload = new IdleRegionDownload(this);
@@ -27,6 +28,7 @@ public class DownloadRegion{
 
         downloadCurrentState = idleRegionDownload;
         flag = false;
+        file = null;
     }
 
     public boolean getFlag(){
@@ -67,8 +69,8 @@ public class DownloadRegion{
         downloadCurrentState.timeEventAfterThreeSecond();
     }
 
-    public void downloadAborted(File x, File file) {
-        downloadCurrentState.downloadAborted(x, file);
+    public void downloadAborted() {
+        downloadCurrentState.downloadAborted();
     }
 
     public void whenQueueGreaterThenZero() {
