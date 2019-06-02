@@ -1,4 +1,9 @@
 package Download;
+import Manger.File;
+import Manger.RegionManager;
+
+import java.util.Queue;
+
 
 public class IdleRegionDownload implements DownloadIState{
 
@@ -44,7 +49,21 @@ public class IdleRegionDownload implements DownloadIState{
     }
 
     @Override
-    public void whenQueueGreaterThenZero() {
+    public void whenQueueGreaterThenZero(File file) {
+        int diskSize = RegionManager.getDiskSize();
+        int fileSize = file.getFileSize();
+        if(diskSize >= fileSize){
+            Queue<File> q = RegionManager.getRequestsQueue();
+            q.remove();
+            System.out.println("file "+ file.getFileName() +" Remove From Download Queue Successfully!");
+            downloadRegion.setDownloadCurrentState(downloadRegion.getDownload());
+
+            // entry to download
+            int newSize = RegionManager.getDiskSize() - file.getFileSize();
+            RegionManager.setDiskSize(newSize);
+            RegionManager.inDownload();
+
+        }
 
     }
 }

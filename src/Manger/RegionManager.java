@@ -1,16 +1,12 @@
 package Manger;
 
-import Download.DownloadIState;
 import Download.DownloadRegion;
 import Internet.InternetRegion;
-import Internet.InternetStatusState;
 import Movie.MovieRegion;
-import Movie.MovieState;
 import Requests.RequestRegion;
-import Requests.RequestState;
 import UserStatus.UserStatusRegion;
-import UserStatus.UserStatusState;
 import idle.IdleRegion;
+
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,5 +1,8 @@
 package Download;
 
+import Manger.File;
+import Manger.RegionManager;
+
 public class Download  implements DownloadIState {
 
     private DownloadRegion downloadRegion;
@@ -10,17 +13,19 @@ public class Download  implements DownloadIState {
 
     @Override
     public void finishDownload() {
-
+        int newPoints = RegionManager.getPoint() +1;
+        RegionManager.setPoint(newPoints);
+        downloadRegion.setDownloadCurrentState(downloadRegion.getFinish());
     }
 
     @Override
     public void downloadError() {
-
+        downloadRegion.setDownloadCurrentState(downloadRegion.getMalfunction());
     }
 
     @Override
     public void internetOff() {
-
+        downloadRegion.setDownloadCurrentState(downloadRegion.getWaitingForInternet());
     }
 
     @Override
@@ -39,8 +44,12 @@ public class Download  implements DownloadIState {
     }
 
     @Override
-    public void downloadAborted() {
-
+    public void downloadAborted(File x, File file) {
+        if (x.Comparison(file)){
+            int newPoints = RegionManager.getPoint() -1;
+            RegionManager.setPoint(newPoints);
+            downloadRegion.setDownloadCurrentState(downloadRegion.getIdleRegionDownload());
+        }
     }
 
     @Override

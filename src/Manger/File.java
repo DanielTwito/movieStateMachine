@@ -17,4 +17,10 @@ public class File {
     public int getFileSize() {
         return fileSize;
     }
+
+    public boolean Comparison(File x) {
+        if (x.getFileName() == this.getFileName() && x.getFileSize() == this.getFileSize())
+            return true;
+        return false;
+    }
 }

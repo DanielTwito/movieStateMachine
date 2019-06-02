@@ -1,5 +1,7 @@
 package Download;
 
+import Manger.RegionManager;
+
 public class WaitingForInternet implements DownloadIState {
 
     private DownloadRegion downloadRegion;
@@ -27,7 +29,8 @@ public class WaitingForInternet implements DownloadIState {
 
     @Override
     public void internetOn() {
-
+        downloadRegion.setDownloadCurrentState(downloadRegion.getDownload());
+        RegionManager.inDownload();
     }
 
     @Override

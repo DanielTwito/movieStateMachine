@@ -1,4 +1,5 @@
 package Download;
+import Manger.File;
 
 public interface DownloadIState {
 
@@ -8,7 +9,7 @@ public interface DownloadIState {
     void internetOn();
     void errorFixed();
     void timeEventAfterThreeSecond();
-    void downloadAborted();
+    void downloadAborted(File x, File file);
 
     //for the event when(Queue > 0)
     void whenQueueGreaterThenZero();

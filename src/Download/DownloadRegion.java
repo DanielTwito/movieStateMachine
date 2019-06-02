@@ -26,6 +26,7 @@ public class DownloadRegion{
         downloadCurrentState = idleRegionDownload;
     }
 
+
     public DownloadIState getDownloadCurrentState() {
         return downloadCurrentState;
     }

@@ -1,5 +1,6 @@
 package Download;
-
+import Manger.File;
+import Manger.RegionManager;
 public class Malfunction implements DownloadIState {
 
     private DownloadRegion downloadRegion;
@@ -30,7 +31,8 @@ public class Malfunction implements DownloadIState {
 
     @Override
     public void errorFixed() {
-
+        downloadRegion.setDownloadCurrentState(downloadRegion.getDownload());
+        RegionManager.inDownload();
     }
 
     @Override
@@ -45,6 +47,8 @@ public class Malfunction implements DownloadIState {
 
     @Override
     public void whenQueueGreaterThenZero() {
+        int newPoints = RegionManager.getPoint() -1;
+        RegionManager.setPoint(newPoints);
 
     }
 }
